@@ -1,17 +1,30 @@
+body{
+    background-color: azure;
+}
 #container{
-    width: 960px;
-    height: auto;
     border: solid black 1px;
+    width: 1000px;
+    height: 800px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .row{
     display: flex;
 }
-.gridSquare{
-    width: 1rem;
-    height: 1rem;
-    border: solid black 1px;
-    flex: 1;
+.square{
+    height: 0px;
+    width: 0px;
 }
-body{
-    background-color: beige;
+.white{
+    background-color: white;
 }
+.black{
+    background-color: black;
+}
+
+
+
