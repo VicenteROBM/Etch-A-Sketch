@@ -1,23 +1,25 @@
 "use strict";
 
-newGrid.addEventListener("click",function(){
-    let squares = prompt("How big do you want the new grid?")
-
-
-    makeGrid(squares,squares)
-})
+function removeGrid() {
+    const elements = document.getElementsByClassName("row");
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
 
 //this function creates the grid
-function makeGrid (rows,columns){
-    
+function makeGrid(rows,columns){
+    let container = document.getElementById("container");
+    removeGrid(container)
+
     // this loop creates the row using flexbox inside the conatiner div
     for(let i=0; i<rows; i++){
-        
 
         let row = document.createElement("div");
         row.classList.add("row");
+        row.setAttribute("id","grid");
         container.appendChild(row);
-        // this for loop creates the squares and gives them 
+        // this for loop creates the squares and gives them
         // the percet size to adapt to container
         for(let p=0; p<columns; p++){
             let square = document.createElement("div");
@@ -27,7 +29,7 @@ function makeGrid (rows,columns){
             let squareHeight = 800/rows;
             square.style.height = ""+squareHeight+"px";
             let squareWidth = 1000/columns;
-            square.style.width = ""+squareWidth+"px";  
+            square.style.width = ""+squareWidth+"px";
 
             square.addEventListener("mouseover",function(){
                 square.classList.add("black")
