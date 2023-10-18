@@ -1,30 +1,48 @@
 body{
     background-color: azure;
 }
+
 #container{
     border: solid black 1px;
     width: 1000px;
     height: 800px;
 }
+
 main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.divButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .row{
     display: flex;
 }
+
 .square{
     height: 0px;
     width: 0px;
 }
+
 .white{
     background-color: white;
 }
+
 .black{
     background-color: black;
 }
 
+input:invalid {
+    border: 2px dashed red;
+}
 
+input:valid {
+    border: 2px solid black;
+}
 

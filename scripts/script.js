@@ -1,10 +1,4 @@
-
-
-let container = document.getElementById("container")
-
-makeGrid(100,100)
-
-let newGrid = document.getElementById("newgrid")
+"use strict";
 
 newGrid.addEventListener("click",function(){
     let squares = prompt("How big do you want the new grid?")
@@ -37,10 +31,34 @@ function makeGrid (rows,columns){
 
             square.addEventListener("mouseover",function(){
                 square.classList.add("black")
-            })        
-        }   
-    }  
- 
+            })
+        }
+    }
+}
+
+function validateForm() {
+    let input = document.querySelector("input");
+    let value = input.value;
+    let invalid = false;
+    if (!value) {
+        input.setCustomValidity("Invalid");
+        alert("You must enter a value greater than 0");
+        invalid = true;
+    } else if (!value.match(/^\d+$/)) {
+        input.setCustomValidity("Invalid");
+        alert("Value must be numeric");
+        invalid = true;
+    } else if (value < 1 || value > 100) {
+        input.setCustomValidity("Invalid");
+        alert("Value must be between 1 and 100, both inclusive");
+        invalid = true;
+    }
+
+    if (!invalid) {
+        input.setCustomValidity("");
+        makeGrid(value, value);
+    }
+    return false;
 }
 
 

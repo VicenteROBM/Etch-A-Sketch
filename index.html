@@ -5,16 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
     <main>
         <header> Etch-A-Sketch </header>
         <div id="container"></div>
         <p>Insert a value, 1 being the smallest and 100 being the highest</p>
-        <button id="newgrid">Make new grid</button>
-        <footer> COPYRIGTH ODIN PROJECT</footer>
+        <form id="form" onsubmit="return validateForm()">
+            <label for="value">Value:</label>
+            <input type="text" id="value" name="value"><br><br>
+            <div class="divButton">
+                <input class="newgrid" id ="newgrid" type="submit" value="Make new grid" onclick="return validateForm()">
+            </div>
+        </form>
+        <br>
+        <footer> COPYRIGHT ODIN PROJECT</footer>
     </main>
-    <script src="scripts/script.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
